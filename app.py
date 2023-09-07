@@ -1,12 +1,15 @@
 from flask import Flask
+from web.routes.SARoute import blueprint as SA_blueprint
 
-app = Flask(__name__)
+
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config')
+    return app
 
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
-
+app = create_app()
+app.register_blueprint(SA_blueprint, url_prefix='/SA')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=5000, debug=True)
