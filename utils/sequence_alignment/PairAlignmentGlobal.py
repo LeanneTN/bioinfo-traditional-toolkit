@@ -38,7 +38,11 @@ class PairAlignmentGlobal:
         pass
 
     def Smith_Waterman(self):
-        """Calculate the score matrix for the alignment"""
+        """
+        Calculate the score matrix for the alignment. Attention, Smith-Waterman algorithm is a local alignment,
+        but it is the variation of Needleman-Wunsch algorithm. Thus, I put it into this class.
+        :return: score matrix and the best-matched sequence
+        """
         len1 = len(self.seq1)
         len2 = len(self.seq2)
         dp = np.zeros((len1 + 1, len2 + 1))
