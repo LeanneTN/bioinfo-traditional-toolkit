@@ -75,4 +75,4 @@ class PairAlignmentGlobal:
                     break
             else:
                 break
-        return matrix_score, match_seq
+        return matrix_score.to_string(), match_seq

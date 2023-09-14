@@ -5,4 +5,4 @@ from utils.sequence_alignment.PairAlignmentGlobal import PairAlignmentGlobal
 
 if __name__ == '__main__':
     pair_alignment = PairAlignmentGlobal('ATACCGCG', 'ACCG', 1, -1, -2)
-    print(pair_alignment.Smith_Waterman())
+    print(pair_alignment.Smith_Waterman()[0])
