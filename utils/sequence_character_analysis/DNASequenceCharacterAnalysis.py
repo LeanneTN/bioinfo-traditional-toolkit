@@ -29,3 +29,24 @@ class DNASequenceCharacterAnalysis:
         num_c = np.char.count(seq, 'C')
         return (num_g + num_c) / l
 
+    def reverse_seq(self):
+        """
+        Reverse a sequence
+        :param seq: str
+        :return: str
+        """
+        return self.seq[::-1]
+
+    def complementary_dna(self):
+        """
+        Get the complementary DNA sequence of a DNA sequence
+        :param seq: the original DNA sequence
+        :return: Complementary DNA sequence
+        """
+        dna_dict = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+        complementary_dna_seq = copy.deepcopy(self.seq)
+        seq_list = list(complementary_dna_seq)
+        for i in range(len(self.seq)):
+            seq_list[i] = dna_dict[self.seq[i]]
+        complementary_dna_seq = ''.join(seq_list)
+        return complementary_dna_seq

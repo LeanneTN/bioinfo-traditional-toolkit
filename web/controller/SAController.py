@@ -3,9 +3,10 @@ from web.service.SAService import hamming_distance, Smith_Waterman
 import json
 
 
-@sa_blueprint.route('/check', methods=["GET"])
-def check():
+@sa_blueprint.route('/', methods=["GET"])
+def SACheck():
     return {
+        'module': 'Sequence Alignment',
         'status': 'OK'
     }
 
